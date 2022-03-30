@@ -4,6 +4,7 @@ def suma(num_1, num_2):
     return num_1 + num_2
 
 class CajaNegraTest(unittest.TestCase):
+    #unit testing
     def test_suma_dos_positivos(self):
         num_1 = 10
         num_2 = 5
@@ -21,5 +22,5 @@ def test_suma_dos_negativos(self):
     self.assertEqual(resultado, -15)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': #not imported
     unittest.main()
