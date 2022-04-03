@@ -9,3 +9,5 @@ lista = list(range(10))
 divisor = 3
 
 print(divide_elementos_de_lista(lista, divisor))
+
+# Manejo de errores con except
