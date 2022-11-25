@@ -1,4 +1,7 @@
-def merge_sort(list):
+from typing import List
+
+
+def merge_sort(list: List[int]) -> List[int]:
     """
     Sorts a list in ascending order
 
@@ -33,7 +36,7 @@ def merge(left, right):
     Merges two lists, sorting them in the process
     Returns a new merged list
     """
-    l = []
+    l: List[int] = []
     i = 0
     j = 0
 
@@ -52,3 +55,14 @@ def merge(left, right):
     while j < len(right):
         l.append(right[j])
         j += 1
+
+    return l
+
+
+def verify_sorted(list: List[int]) -> bool:
+    n = len(list)
+
+    if n == 0 or n == 1:
+        return True
+
+    return list[0] < list[1] and verify_sorted(list[1:])
