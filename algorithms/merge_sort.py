@@ -1,3 +1,4 @@
+from linked_list import SinglyLinkedList
 from typing import List
 
 
@@ -8,6 +9,8 @@ def merge_sort(list: List[int]) -> List[int]:
     Divide: Find the midpoint of the list and divide
     Conquer: Recursively sort the sublists created
     Combine: Merg the sorted sublists
+
+    Takes O(kn log n) time
     """
     if len(list) <= 1:
         return list
@@ -23,6 +26,8 @@ def split(list):
     """
     Divide the unsorted list at midpoint
     Returns two sublists - left and right
+
+    Takes overall O(k log n) time
     """
     mid = len(list) // 2
     left = list[:mid]
@@ -35,6 +40,8 @@ def merge(left, right):
     """
     Merges two lists, sorting them in the process
     Returns a new merged list
+
+    Runs in overall O(n) time
     """
     l: List[int] = []
     i = 0
@@ -66,3 +73,10 @@ def verify_sorted(list: List[int]) -> bool:
         return True
 
     return list[0] < list[1] and verify_sorted(list[1:])
+
+
+alist = [54, 243, 57, 12, 68, 768, 3]
+l = merge_sort(alist)
+
+print(verify_sorted(alist))
+print(verify_sorted(l))
