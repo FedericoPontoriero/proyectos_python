@@ -5,6 +5,8 @@ numbers = load_numbers(sys.argv[1])
 
 
 def selection_sort(values):
+    # It selects the smallest value and moves it to another list
+    # Very unefficient
     sorted_list = []
     # print("%-25s %-25s" % (values, sorted_list))
     for i in range(0, len(values)):
