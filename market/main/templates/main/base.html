@@ -12,7 +12,10 @@
     />
   </head>
   <body>
-    {% include 'main/includes/navbar.html' %} {%block pageheader%} {%endblock%}
+    {% if messages %} {% for message in messages %}
+    <div class="alert">{{message}}</div>
+    {%endfor%} {% endif %} {% include 'main/includes/navbar.html' %} {%block
+    pageheader%} {%endblock%}
     <div class="container">{% block content %} {% endblock %}</div>
 
     <script
